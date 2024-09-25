@@ -196,8 +196,8 @@ def load_galaxy_data(filter_type="MASC"):
         filter_type (str, Optional): Indicates which type of filter to use when removing noise.
             Options include MASC and MAANF. Defaults to MASC.
     """
-    if not os.path.exists('data/FRGMRC/'):
-        warnings.warn('Please download the FRGMRC data from Zenodo into the data directory first', RuntimeWarning)
+    if not os.path.exists('data/FRGMRC-221022-RELEASE-V1.0/'):
+        warnings.warn('Please download and extract the FRGMRC data from Zenodo into the data directory first', RuntimeWarning)
         return
     
     SOURCE_COUNTS = {
@@ -210,23 +210,23 @@ def load_galaxy_data(filter_type="MASC"):
     # Excluding ambiguous sources that are currently being reconsidered for inclusion in FRGMRC
     # Can remove this section once the final decisions have been made
     EXCLUSIONS = [
-        "data/FRGMRC/BENT_210.fits",
-        "data/FRGMRC/COMPACT_17.fits",
-        "data/FRGMRC/COMPACT_20.fits",
-        "data/FRGMRC/COMPACT_40.fits",
-        "data/FRGMRC/FRI_39.fits",
-        "data/FRGMRC/FRI_45.fits",
-        "data/FRGMRC/FRI_49.fits",
-        "data/FRGMRC/FRI_86.fits",
-        "data/FRGMRC/FRII_14.fits",
-        "data/FRGMRC/FRII_70.fits",
-        "data/FRGMRC/FRII_90.fits",
-        "data/FRGMRC/FRII_117.fits",
-        "data/FRGMRC/FRII_182.fits",
-        "data/FRGMRC/FRII_331.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/BENT_210.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/COMPACT_17.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/COMPACT_20.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/COMPACT_40.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRI_39.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRI_45.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRI_49.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRI_86.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_14.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_70.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_90.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_117.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_182.fits",
+        "data/FRGMRC-221022-RELEASE-V1.0/FRII_331.fits",
     ]
     
-    rootdir = 'data/FRGMRC/'
+    rootdir = 'data/FRGMRC-221022-RELEASE-V1.0/'
     label_dict = {'BENT': 0, 'COMPACT': 1, 'FRI': 2, 'FRII': 3}
     filter_driver = FILTER_OPTIONS[filter_type]()
     feature_extractor = FeatureExtractor()
@@ -312,6 +312,6 @@ def create_holdout_test():
 if __name__ == "__main__":
     filter_type = "MASC"
     load_galaxy_data(filter_type=filter_type)
-    # filter_type = "MAANF"
-    # load_galaxy_data(filter_type=filter_type)
-    # create_holdout_test()
+    filter_type = "MAANF"
+    load_galaxy_data(filter_type=filter_type)
+    create_holdout_test()

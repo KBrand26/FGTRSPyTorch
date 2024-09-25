@@ -15,4 +15,4 @@ Once the dataset has been downloaded, the **prepare_data.py** script in the **sr
   - **models/**: Contains the model architectures that will be used in the experiments.
   - **src/**: Contains the scripts necessary for conducting the experiments.
 
-For more information, the reader is referred to the READMEs in each of the subdirectories.
+For more information, the reader is referred to the READMEs in each of the subdirectories. For instructions regarding suggested usage, refer to the README in the src/ directory.

@@ -15,7 +15,7 @@ class StandardDataModule(pl.LightningDataModule):
     conducting further preprocessing that is reliant on splits and creating dataloaders for easy use during training
     and testing. It is intended for models that only have the images as inputs.
     """    
-    def __init__(self, batch_size=64, seed=42, rotation_method="augment", filter_method="advanced"):
+    def __init__(self, batch_size=64, seed=42, rotation_method="augment", filter_method="MAANF"):
         """Initialize a datamodule to use with most of the neural networks used in these experiments.
 
         Args:
@@ -23,8 +23,8 @@ class StandardDataModule(pl.LightningDataModule):
             seed (int, optional): The random seed to use. Defaults to 42.
             rotation_method (str, optional): Indicates whether augmentation or rotational standardisation or neither should be used to address
                 rotational variations. Defaults to "augment".
-            filter_method (str, optional): Indicates whether a simple or advanced noise filtering strategy should be applied.
-                Defaults to "advanced".
+            filter_method (str, optional): Indicates whether MASC or MAANF noise filtering strategy should be applied.
+                Defaults to "MAANF".
         """
         super().__init__()
         self.save_hyperparameters()
@@ -119,5 +119,5 @@ class StandardDataModule(pl.LightningDataModule):
         return DataLoader(rest, batch_size=len(rest), num_workers=0, pin_memory=True)
 
 if __name__ == '__main__':
-    dm = StandardDataModule(rotation_method='augment', filter_method='advanced')
+    dm = StandardDataModule(rotation_method='augment', filter_method='MAANF')
     dl = dm.train_dataloader()

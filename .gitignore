@@ -1,4 +1,9 @@
-FRGMRC/*
+data/FRGMRC/*
+data/FRGMRC-221022-RELEASE-V1.0/*
+lightning_logs/*
+model_checkpoints/*
+outputs/*
+wandb/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
