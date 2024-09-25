@@ -220,36 +220,36 @@ if __name__ == "__main__":
     # Rotation experiments
     # =====================
     # No rotational adjustments
-    runner = ExperimentDriver(runs=1, model="SCNN", rotation_method="none", filter_method="MAANF", epochs=100)
+    runner = ExperimentDriver(runs=10, model="SCNN", rotation_method="none", filter_method="MAANF", epochs=100)
     runner.execute_experiment()
     
     # Standardisation
-    runner = ExperimentDriver(runs=1, model="SCNN", rotation_method="standardise", filter_method="MAANF", epochs=100)
+    runner = ExperimentDriver(runs=10, model="SCNN", rotation_method="standardise", filter_method="MAANF", epochs=100)
     runner.execute_experiment()
     
     # # Augment
-    runner = ExperimentDriver(runs=1, model="SCNN", rotation_method="augment", filter_method="MAANF", epochs=100)
+    runner = ExperimentDriver(runs=10, model="SCNN", rotation_method="augment", filter_method="MAANF", epochs=100)
     runner.execute_experiment()
     
     # ==========================
     # Feature guided experiments
     # ==========================
     # MhCNN
-    runner = ExperimentDriver(runs=1, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="even")
+    runner = ExperimentDriver(runs=10, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="even")
     runner.execute_experiment()
     
-    # runner = ExperimentDriver(runs=10, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="main")
-    # runner.execute_experiment()
+    runner = ExperimentDriver(runs=10, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="main")
+    runner.execute_experiment()
     
-    # runner = ExperimentDriver(runs=10, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="aux")
-    # runner.execute_experiment()
+    runner = ExperimentDriver(runs=10, model="MhCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="aux")
+    runner.execute_experiment()
     
     # MCNN
-    runner = ExperimentDriver(runs=1, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="even")
+    runner = ExperimentDriver(runs=10, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="even")
     runner.execute_experiment()
     
-    # runner = ExperimentDriver(runs=10, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="main")
-    # runner.execute_experiment()
+    runner = ExperimentDriver(runs=10, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="main")
+    runner.execute_experiment()
     
-    # runner = ExperimentDriver(runs=10, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="aux")
-    # runner.execute_experiment()
+    runner = ExperimentDriver(runs=10, model="MCNN", rotation_method="none", filter_method="MAANF", epochs=100, weight="aux")
+    runner.execute_experiment()
